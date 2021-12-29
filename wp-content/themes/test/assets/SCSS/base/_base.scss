@@ -1,5 +1,4 @@
-
-:root{
+:root {
     --headerHeight: #{rem-calc(250)};
     --titleHeight: #{rem-calc(150)};
     --pageTitleFS: #{rem-calc(24)};
@@ -10,58 +9,71 @@
     --leadPostsElementH: #{rem-calc(100)};
     --gap: #{rem-calc(20)};
 
+    --authorPostsElementW: 100%;
+    --authorPostsElementH: #{rem-calc(289)};
+
+    --formBoxW:100%;
+    --formBoxH:#{rem-calc(300)};
 }
 @media only screen and (min-width: $tablet) {
-    :root{
-        --headerHeight: #{rem-calc(300)}; 
+    :root {
+        --headerHeight: #{rem-calc(300)};
         --pageTitleFS: #{rem-calc(36)};
-        --pageTitleLH: #{rem-calc(45)};       
-    }    
-  }
+        --pageTitleLH: #{rem-calc(45)};
+        --authorPostsElementW: #{rem-calc(538)};
+        --authorPostsElementH: #{rem-calc(160)};
+    }
+}
 
-  @media only screen and (min-width: $desktop) {
-    :root{
-        --headerHeight: #{rem-calc(600)};  
-        --mainWidth: #{rem-calc(1110)}; 
-        --pagePadding: 0; 
+
+
+@media only screen and (min-width: $desktop) {
+    :root {
+        --headerHeight: #{rem-calc(600)};
+        --mainWidth: #{rem-calc(1110)};
+        --pagePadding: 0;
         --leadPostsElementW: #{rem-calc(348)};
         --leadPostsElementH: #{rem-calc(198)};
         --gap: #{rem-calc(30)};
+
+        --authorPostsElementW: #{rem-calc(538)};
+        --authorPostsElementH: #{rem-calc(160)};
     }
-    .leadPosts{
-        ul{
-            li{
+    .leadPosts,
+    .authorsList {
+        ul {
+            li {
                 margin-right: var(--gap);
-                margin-bottom: unset;
+                margin-bottom: 0 !important;
             }
         }
     }
-  }
+}
 
 //smoother
 
-.--t05 {    
-    transition: 0.5s;    
+.--t05 {
+    transition: 0.5s;
 }
 
 //settings
-.--border{
+.--border {
     border: solid 1px $defaultBorderColor;
 }
 
-.header{
+.header {
     width: 100%;
-    height: var(--headerHeight); 
+    height: var(--headerHeight);
     background: url("../images/header.jpg") center center;
     background-size: cover;
 }
-.main{
+.main {
     padding: 0 var(--pagePadding);
     max-width: var(--mainWidth);
     margin: 0 auto;
 }
 
-.pageTitle{
+.pageTitle {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -71,22 +83,53 @@
     font-weight: 700;
     line-height: var(--pageTitleLH);
     letter-spacing: 0em;
-    text-align: center;    
+    text-align: center;
 }
 
-.main{
+.sectionTitle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: var(--titleHeight);
+    font-size: rem-calc(24);
+    font-style: normal;
+    font-weight: 700;
+    line-height: rem-calc(30);
+    letter-spacing: 0em;
+    text-align: center;
+}
+
+.main {
     min-height: 400px;
     background: hotpink;
-    .leadPosts{
-        ul{
+    .leadPosts {
+        ul {
             display: flex;
             flex-wrap: wrap;
-            li{
+            li {
                 display: block;
                 width: var(--leadPostsElementW);
                 height: var(--leadPostsElementH);
+                margin-bottom: var(--gap);                
+                &:last-child {
+                    margin-right: 0;  
+                    margin-bottom: 0;                  
+                }
+            }
+        }
+    }
+    .authorsList {
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            li {
+                display: block;
+                width: var(--authorPostsElementW);
+                height: var(--authorPostsElementH);
                 margin-bottom: var(--gap);
-                &:last-child{
+                &:last-child {
                     margin-right: 0;
                 }
             }
@@ -94,8 +137,16 @@
     }
 }
 
+.subscrybeForm{
+    .formBox{
+        width: var(--formBoxW);
+        height: var(--formBoxH); 
+        background-color: $formBGcolor; 
+    }
 
-.footer{
+}
+
+.footer {
     width: 100%;
     height: 120px;
     background: gray;

@@ -53,6 +53,10 @@ H6 {
   --leadPostsElementW: 100%;
   --leadPostsElementH: 6.25rem;
   --gap: 1.25rem;
+  --authorPostsElementW: 100%;
+  --authorPostsElementH: 18.0625rem;
+  --formBoxW:100%;
+  --formBoxH:18.75rem;
 }
 
 @media only screen and (min-width: 48rem) {
@@ -60,6 +64,8 @@ H6 {
     --headerHeight: 18.75rem;
     --pageTitleFS: 2.25rem;
     --pageTitleLH: 2.8125rem;
+    --authorPostsElementW: 33.625rem;
+    --authorPostsElementH: 10rem;
   }
 }
 
@@ -71,10 +77,13 @@ H6 {
     --leadPostsElementW: 21.75rem;
     --leadPostsElementH: 12.375rem;
     --gap: 1.875rem;
+    --authorPostsElementW: 33.625rem;
+    --authorPostsElementH: 10rem;
   }
-  .leadPosts ul li {
+  .leadPosts ul li,
+  .authorsList ul li {
     margin-right: var(--gap);
-    margin-bottom: unset;
+    margin-bottom: 0 !important;
   }
 }
 
@@ -119,6 +128,25 @@ H6 {
   text-align: center;
 }
 
+.sectionTitle {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: var(--titleHeight);
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.875rem;
+  letter-spacing: 0em;
+  text-align: center;
+}
+
 .main {
   min-height: 400px;
   background: hotpink;
@@ -141,6 +169,38 @@ H6 {
 
 .main .leadPosts ul li:last-child {
   margin-right: 0;
+  margin-bottom: 0;
+}
+
+.main .authorsList ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main .authorsList ul li {
+  display: block;
+  width: var(--authorPostsElementW);
+  height: var(--authorPostsElementH);
+  margin-bottom: var(--gap);
+}
+
+.main .authorsList ul li:last-child {
+  margin-right: 0;
+}
+
+.subscrybeForm .formBox {
+  width: var(--formBoxW);
+  height: var(--formBoxH);
+  background-color: rgba(63, 63, 63, 0.6);
 }
 
 .footer {
