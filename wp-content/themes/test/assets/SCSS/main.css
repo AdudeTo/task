@@ -4,6 +4,13 @@ body {
   margin: 0;
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
+  color: #3F3F3F;
+}
+
+ul, ol, li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 H1 {
@@ -43,6 +50,9 @@ H6 {
   --pageTitleLH: 1.875rem;
   --pagePadding: 0.9375rem;
   --mainWidth: 100%;
+  --leadPostsElementW: 100%;
+  --leadPostsElementH: 6.25rem;
+  --gap: 1.25rem;
 }
 
 @media only screen and (min-width: 48rem) {
@@ -57,12 +67,24 @@ H6 {
   :root {
     --headerHeight: 37.5rem;
     --mainWidth: 69.375rem;
+    --pagePadding: 0;
+    --leadPostsElementW: 21.75rem;
+    --leadPostsElementH: 12.375rem;
+    --gap: 1.875rem;
+  }
+  .leadPosts ul li {
+    margin-right: var(--gap);
+    margin-bottom: unset;
   }
 }
 
 .--t05 {
   -webkit-transition: 0.5s;
   transition: 0.5s;
+}
+
+.--border {
+  border: solid 1px #DCDCDC;
 }
 
 .header {
@@ -100,6 +122,25 @@ H6 {
 .main {
   min-height: 400px;
   background: hotpink;
+}
+
+.main .leadPosts ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.main .leadPosts ul li {
+  display: block;
+  width: var(--leadPostsElementW);
+  height: var(--leadPostsElementH);
+  margin-bottom: var(--gap);
+}
+
+.main .leadPosts ul li:last-child {
+  margin-right: 0;
 }
 
 .footer {

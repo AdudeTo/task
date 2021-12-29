@@ -6,6 +6,10 @@
     --pageTitleLH: #{rem-calc(30)};
     --pagePadding: #{rem-calc(15)};
     --mainWidth: 100%;
+    --leadPostsElementW: 100%;
+    --leadPostsElementH: #{rem-calc(100)};
+    --gap: #{rem-calc(20)};
+
 }
 @media only screen and (min-width: $tablet) {
     :root{
@@ -18,7 +22,19 @@
   @media only screen and (min-width: $desktop) {
     :root{
         --headerHeight: #{rem-calc(600)};  
-        --mainWidth: #{rem-calc(1110)};  
+        --mainWidth: #{rem-calc(1110)}; 
+        --pagePadding: 0; 
+        --leadPostsElementW: #{rem-calc(348)};
+        --leadPostsElementH: #{rem-calc(198)};
+        --gap: #{rem-calc(30)};
+    }
+    .leadPosts{
+        ul{
+            li{
+                margin-right: var(--gap);
+                margin-bottom: unset;
+            }
+        }
     }
   }
 
@@ -26,6 +42,11 @@
 
 .--t05 {    
     transition: 0.5s;    
+}
+
+//settings
+.--border{
+    border: solid 1px $defaultBorderColor;
 }
 
 .header{
@@ -56,7 +77,23 @@
 .main{
     min-height: 400px;
     background: hotpink;
+    .leadPosts{
+        ul{
+            display: flex;
+            flex-wrap: wrap;
+            li{
+                display: block;
+                width: var(--leadPostsElementW);
+                height: var(--leadPostsElementH);
+                margin-bottom: var(--gap);
+                &:last-child{
+                    margin-right: 0;
+                }
+            }
+        }
+    }
 }
+
 
 .footer{
     width: 100%;
