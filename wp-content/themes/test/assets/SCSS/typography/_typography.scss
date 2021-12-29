@@ -1,0 +1,20 @@
+//fonts set
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap');
+
+body{  
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+}
+
+
+//normalyze
+@for $i from 1 through 6 {
+    H#{$i} {
+        margin: 0;
+        font-weight: 700;
+    }
+}
+
+

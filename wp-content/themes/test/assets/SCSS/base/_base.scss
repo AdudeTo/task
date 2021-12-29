@@ -1,0 +1,65 @@
+
+:root{
+    --headerHeight: #{rem-calc(250)};
+    --titleHeight: #{rem-calc(150)};
+    --pageTitleFS: #{rem-calc(24)};
+    --pageTitleLH: #{rem-calc(30)};
+    --pagePadding: #{rem-calc(15)};
+    --mainWidth: 100%;
+}
+@media only screen and (min-width: $tablet) {
+    :root{
+        --headerHeight: #{rem-calc(300)}; 
+        --pageTitleFS: #{rem-calc(36)};
+        --pageTitleLH: #{rem-calc(45)};       
+    }    
+  }
+
+  @media only screen and (min-width: $desktop) {
+    :root{
+        --headerHeight: #{rem-calc(600)};  
+        --mainWidth: #{rem-calc(1110)};  
+    }
+  }
+
+//smoother
+
+.--t05 {    
+    transition: 0.5s;    
+}
+
+.header{
+    width: 100%;
+    height: var(--headerHeight); 
+    background: url("../images/header.jpg") center center;
+    background-size: cover;
+}
+.main{
+    padding: 0 var(--pagePadding);
+    max-width: var(--mainWidth);
+    margin: 0 auto;
+}
+
+.pageTitle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: var(--titleHeight);
+    font-size: var(--pageTitleFS);
+    font-style: normal;
+    font-weight: 700;
+    line-height: var(--pageTitleLH);
+    letter-spacing: 0em;
+    text-align: center;    
+}
+
+.main{
+    min-height: 400px;
+    background: hotpink;
+}
+
+.footer{
+    width: 100%;
+    height: 120px;
+    background: gray;
+}
