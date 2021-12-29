@@ -9,14 +9,13 @@ body{
     color: $defaultFontColor;
 }
 
+//normalyze
 ul,ol,li{
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-
-//normalyze
 @for $i from 1 through 6 {
     H#{$i} {
         margin: 0;

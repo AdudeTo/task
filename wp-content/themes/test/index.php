@@ -38,8 +38,12 @@ get_header();  ?>
 </section>
 <section class="subscrybeForm">
     <div class="formBox">
+        <form>
+            bla bla 
+        </form>
     </div>
     <div class="formSubmit">
+        <button>Form submit</button>
     </div>
 </section>
     
