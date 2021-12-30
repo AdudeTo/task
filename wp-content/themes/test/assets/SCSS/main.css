@@ -80,9 +80,15 @@ button {
   font-family: "Roboto", sans-serif;
   font-weight: 700;
   text-transform: uppercase;
-  height: calc(3.75rem + (2 * 0.0625rem));
+  height: 3.75rem;
   padding: 0 0.9375rem;
   cursor: pointer;
+  background-color: #F16529;
+  color: #FFFFFF;
+}
+
+button:hover {
+  background-color: #d34a0f;
 }
 
 button[type="submit"] {
@@ -111,6 +117,8 @@ button[type="submit"]:hover {
   --formGap:0.9375rem;
   --formTitleFontSize:1.5rem;
   --formTitleFontLH:1.8rem;
+  --callToFormButtonW: 300px;
+  --callToFormButtonH: 2rem;
 }
 
 @media only screen and (min-width: 48rem) {
@@ -120,6 +128,9 @@ button[type="submit"]:hover {
     --pageTitleLH: 2.8125rem;
     --authorPostsElementW: 33.625rem;
     --authorPostsElementH: 10rem;
+    --formBoxW:20.625rem;
+    --callToFormButtonW: 33.75rem;
+    --callToFormButtonH: 3.75rem;
   }
   .subscrybeForm .callToform {
     margin: 0 auto !important;
@@ -144,12 +155,18 @@ button[type="submit"]:hover {
     z-index: 10 !important;
   }
   .formBox form {
-    width: 350px !important;
-    height: 300px;
+    width: var(--formBoxW) !important;
     background-color: rgba(63, 63, 63, 0.6);
     height: var(--headerHeight) !important;
     float: right;
     margin-right: var(--pagePadding);
+  }
+  .callToform {
+    max-width: var(--callToFormButtonW);
+  }
+  .callToform button {
+    width: 100% !important;
+    max-width: unset !important;
   }
 }
 
@@ -165,6 +182,8 @@ button[type="submit"]:hover {
     --authorPostsElementH: 10rem;
     --formTitleFontSize:2.25rem;
     --formTitleFontLH:2.7rem;
+    --formBoxW:21.875rem;
+    --auhtorListBottomSpace: 5.375rem;
   }
   .leadPosts ul li,
   .authorsList ul li {
@@ -173,9 +192,11 @@ button[type="submit"]:hover {
   }
   .authorsList {
     width: 100%;
+    margin-bottom: var(--auhtorListBottomSpace);
   }
   .formBox form {
     margin-right: 20%;
+    width: var(--formBoxW) !important;
   }
 }
 
@@ -333,14 +354,20 @@ button[type="submit"]:hover {
 
 .subscrybeForm .callToform {
   width: 100%;
-  height: 50px;
-  background-color: black;
+  height: var(--callToFormButtonH);
   margin: 0 auto;
   padding: 0;
   position: absolute;
-  top: calc(var(--headerHeight) - 50px);
+  top: calc(var(--headerHeight) - var(--callToFormButtonH) - var(--pagePadding));
   left: 0;
   z-index: 100;
+  text-align: center;
+}
+
+.subscrybeForm .callToform button {
+  height: var(--callToFormButtonH);
+  width: 90%;
+  max-width: 250px;
 }
 
 .footer {

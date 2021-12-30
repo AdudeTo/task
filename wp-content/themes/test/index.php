@@ -47,7 +47,7 @@ get_header();  ?>
         </form>        
     </div>
     <div class="callToform">
-        <button>Form submit</button>
+        <button class=" --t05">Lorem ipsum dolor sit amet</button>
     </div>
 </section>
     

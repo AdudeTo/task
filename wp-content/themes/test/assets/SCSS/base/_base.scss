@@ -8,15 +8,16 @@
     --leadPostsElementW: 100%;
     --leadPostsElementH: #{rem-calc(100)};
     --gap: #{rem-calc(20)};
-
     --authorPostsElementW: 100%;
     --authorPostsElementH: #{rem-calc(289)};
-
     --formBoxW:100%;
     --formBoxH:#{rem-calc(300)};
     --formGap:#{rem-calc(15)};
     --formTitleFontSize:#{rem-calc(24)};
     --formTitleFontLH:#{rem-calc(28.8)};
+    --callToFormButtonW: 300px;
+    --callToFormButtonH: #{$defaultButtonHsmall};
+      
 }
 @media only screen and (min-width: $tablet) {
     :root {
@@ -25,6 +26,9 @@
         --pageTitleLH: #{rem-calc(45)};
         --authorPostsElementW: #{rem-calc(538)};
         --authorPostsElementH: #{rem-calc(160)};
+        --formBoxW:#{rem-calc(330)};
+        --callToFormButtonW: #{rem-calc(540)};
+        --callToFormButtonH: #{$defaultButtonH};
     }
     .subscrybeForm{
         .callToform{
@@ -50,13 +54,19 @@
         width: 100% !important;
         z-index: 10 !important;        
         form{
-            width: 350px !important;
-            height: 300px;
+            width: var(--formBoxW) !important;            
             background-color: $formBGcolor; 
             height: var(--headerHeight) !important; 
             float: right;
             margin-right: var(--pagePadding);
         }
+    }
+    .callToform{       
+        max-width: var(--callToFormButtonW);
+        button{
+            width: 100% !important;
+            max-width: unset !important;
+        } 
     }
 }
 
@@ -75,6 +85,8 @@
         --authorPostsElementH: #{rem-calc(160)};
         --formTitleFontSize:#{rem-calc(36)};
         --formTitleFontLH:#{rem-calc(43.2)};
+        --formBoxW:#{rem-calc(350)};
+        --auhtorListBottomSpace: #{rem-calc(86)};
     }
     .leadPosts,
     .authorsList {
@@ -87,10 +99,12 @@
     }
     .authorsList{
         width: 100%;
+        margin-bottom: var(--auhtorListBottomSpace);
     }
     .formBox{   
         form{            
             margin-right: 20%;
+            width: var(--formBoxW) !important; 
         }
     }
 }
@@ -217,19 +231,23 @@
     }
     .callToform{
         width: 100%;
-        height: 50px;
-        background-color: black;
+        height: var(--callToFormButtonH);        
         margin: 0 auto;
         padding: 0;
         position: absolute;
-        top: calc(var(--headerHeight) - 50px );
+        top: calc(var(--headerHeight) - #{var(--callToFormButtonH)} - #{var(--pagePadding)} );
         left: 0;
         z-index: 100;
+        text-align: center;
+        button{
+            height: var(--callToFormButtonH); 
+            width: 90%;
+            max-width: 250px;
+        }
     }
 }
 
 .footer {
     width: 100%;
     height: 120px;
-    background: gray;
-}
+    background: gray;}
