@@ -119,6 +119,9 @@ button[type="submit"]:hover {
   --formTitleFontLH:1.8rem;
   --callToFormButtonW: 300px;
   --callToFormButtonH: 2rem;
+  --tagListMarginT: 3.125rem;
+  --tagListMarginB: 3.125rem;
+  --tagListGap: 1.875rem;
 }
 
 @media only screen and (min-width: 48rem) {
@@ -131,6 +134,9 @@ button[type="submit"]:hover {
     --formBoxW:20.625rem;
     --callToFormButtonW: 33.75rem;
     --callToFormButtonH: 3.75rem;
+    --tagListMarginT: 3.125rem;
+    --tagListMarginB: 4.6875rem;
+    --tagListGap: unset;
   }
   .subscrybeForm .callToform {
     margin: 0 auto !important;
@@ -184,6 +190,8 @@ button[type="submit"]:hover {
     --formTitleFontLH:2.7rem;
     --formBoxW:21.875rem;
     --auhtorListBottomSpace: 5.375rem;
+    --tagListMarginT: 6.25rem;
+    --tagListMarginB: 3.125rem;
   }
   .leadPosts ul li,
   .authorsList ul li {
@@ -368,6 +376,59 @@ button[type="submit"]:hover {
   height: var(--callToFormButtonH);
   width: 90%;
   max-width: 250px;
+}
+
+.tagList {
+  margin-top: var(--tagListMarginT);
+  margin-bottom: var(--tagListMarginB);
+}
+
+.tagList ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  gap: var(--tagListGap);
+}
+
+.tagList ul li {
+  display: block;
+  width: 101px;
+  height: 90px;
+}
+
+.tagList ul li.icon {
+  background-position: top center;
+  background-repeat: no-repeat;
+}
+
+.tagList ul li.icon--www {
+  background-image: url("../images/icons/www.png");
+}
+
+.tagList ul li.icon--html {
+  background-image: url("../images/icons/html.png");
+}
+
+.tagList ul li.icon--js {
+  background-image: url("../images/icons/js.png");
+}
+
+.tagList ul li.icon--css {
+  background-image: url("../images/icons/css.png");
+}
+
+.tagList ul li.icon--wp {
+  background-image: url("../images/icons/wp.png");
 }
 
 .footer {

@@ -50,6 +50,15 @@ get_header();  ?>
         <button class=" --t05">Lorem ipsum dolor sit amet</button>
     </div>
 </section>
+<section class="tagList">
+    <ul>
+        <li class="icon--www"></li>
+        <li class="icon--html"></li>
+        <li class="icon--js"></li>
+        <li class="icon--css"></li>
+        <li class="icon--wp"></li>
+    </ul>
+</swction>
     
 
 </main>

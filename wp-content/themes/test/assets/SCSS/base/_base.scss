@@ -17,6 +17,9 @@
     --formTitleFontLH:#{rem-calc(28.8)};
     --callToFormButtonW: 300px;
     --callToFormButtonH: #{$defaultButtonHsmall};
+    --tagListMarginT: #{rem-calc(50)};
+    --tagListMarginB: #{rem-calc(50)};
+    --tagListGap: #{rem-calc(30)};
       
 }
 @media only screen and (min-width: $tablet) {
@@ -29,6 +32,9 @@
         --formBoxW:#{rem-calc(330)};
         --callToFormButtonW: #{rem-calc(540)};
         --callToFormButtonH: #{$defaultButtonH};
+        --tagListMarginT: #{rem-calc(50)};
+        --tagListMarginB: #{rem-calc(75)};
+        --tagListGap: unset;
     }
     .subscrybeForm{
         .callToform{
@@ -87,6 +93,8 @@
         --formTitleFontLH:#{rem-calc(43.2)};
         --formBoxW:#{rem-calc(350)};
         --auhtorListBottomSpace: #{rem-calc(86)};
+        --tagListMarginT: #{rem-calc(100)};
+        --tagListMarginB: #{rem-calc(50)};
     }
     .leadPosts,
     .authorsList {
@@ -246,8 +254,45 @@
         }
     }
 }
+.tagList{  
+    margin-top: var(--tagListMarginT) ;
+    margin-bottom: var(--tagListMarginB) ;
+    ul{
+        display: flex;  
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        align-content: center; 
+        gap: var(--tagListGap);
+        li{
+            display: block;
+            width: 101px;
+            height: 90px;
+            &.icon{
+                background-position: top center;
+                background-repeat: no-repeat;
+                &--www{
+                    background-image: url("../images/icons/www.png");
+                }
+                &--html{
+                    background-image: url("../images/icons/html.png");
+                }
+                &--js{
+                    background-image: url("../images/icons/js.png");
+                }
+                &--css{
+                    background-image: url("../images/icons/css.png");
+                }
+                &--wp{
+                    background-image: url("../images/icons/wp.png");
+                }
+            }
+        }
+    }
+}
 
 .footer {
     width: 100%;
     height: 120px;
-    background: gray;}
+    background: gray;
+}
