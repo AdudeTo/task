@@ -4,7 +4,7 @@
 body{  
     padding: 0;
     margin: 0;
-    font-family: 'Roboto', sans-serif;
+    font-family: $defaultFontFamily;
     font-weight: 300;
     color: $defaultFontColor;
 }
@@ -20,5 +20,32 @@ ul,ol,li{
     H#{$i} {
         margin: 0;
         font-weight: 700;
+    }
+}
+
+//form base set
+input {
+    border: none;
+    outline: none;
+    padding: 0;
+    margin: 0;
+    height: $formElementHeight;
+    font-family: $defaultFontFamily;
+    &[type="text"]{
+        background: $formFieldBackground;
+        border: solid $defaultBorderSize $formFieldBorder;        
+        font-weight: 700;
+        color: $formFontColor;
+        text-transform: uppercase; 
+        padding: 0 $formImputPadding;  
+        box-shadow: $formBoxShadow;     
+    }
+    &[type="submit"]{        
+        font-weight: 700;
+        color: $formFontColor;
+        text-transform: uppercase; 
+        height: calc(#{$formElementHeight} + (2 * #{$defaultBorderSize})); 
+        background-color: $formButtonColor;  
+        color: $formButtonFontColor;    
     }
 }

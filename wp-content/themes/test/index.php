@@ -37,12 +37,16 @@ get_header();  ?>
     </ul>
 </section>
 <section class="subscrybeForm">
-    <div class="formBox">
-        <form>
-            bla bla 
-        </form>
+    <div class="formBox">    
+        <form class="--t05">    
+           
+                <div class="formTitle">Lorem ipsum dolor sit amet</div>            
+                <input name="email_address" type="text"  placeholder="Email" minlength="1" maxlength="255" required="required">
+                <input type="submit" value="Lorem ipsum dolor sit amet">      
+            
+        </form>        
     </div>
-    <div class="formSubmit">
+    <div class="callToform">
         <button>Form submit</button>
     </div>
 </section>
@@ -51,5 +55,4 @@ get_header();  ?>
 </main>
 
 
-<?php get_footer();
-?>
+<?php get_footer();?>
