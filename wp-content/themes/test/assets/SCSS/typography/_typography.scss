@@ -15,6 +15,12 @@ ul,ol,li{
     padding: 0;
     margin: 0;
 }
+a{
+    color: $defaultFontColor;
+    &:hover{
+        color: $defaultLinkHover;
+    }  
+}
 
 @for $i from 1 through 6 {
     H#{$i} {

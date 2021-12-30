@@ -35,6 +35,7 @@
         --tagListMarginT: #{rem-calc(50)};
         --tagListMarginB: #{rem-calc(75)};
         --tagListGap: unset;
+        --footerCaptionW: #{rem-calc(540)};
     }
     .subscrybeForm{
         .callToform{
@@ -73,6 +74,23 @@
             width: 100% !important;
             max-width: unset !important;
         } 
+    }
+    .footer { 
+        .pageList{ 
+            text-align: center; 
+            justify-content: center;
+            gap: rem-calc(30);      
+            a{               
+                width: unset !important;
+                line-height: rem-calc(48);    
+            }
+        }
+        .footerCaption{
+            max-width: var(--footerCaptionW);
+            margin: auto;
+            padding-bottom: var(--pagePadding);
+
+        }
     }
 }
 
@@ -113,6 +131,11 @@
         form{            
             margin-right: 20%;
             width: var(--formBoxW) !important; 
+        }
+    }
+    .footer { 
+        .footerCaption{
+            max-width: var(--mainWidth);
         }
     }
 }
@@ -293,6 +316,24 @@
 
 .footer {
     width: 100%;
-    height: 120px;
-    background: gray;
+    min-height: $defaultFooterMinH;
+    background: $defaultFooterBackground;
+    text-align: center;
+    font-size: rem-calc(16);
+    line-height: rem-calc(20.81); 
+    .pageList{        
+        display: flex;
+        flex-wrap: wrap;              
+        a{
+            display: inline-block;
+            width: 100%;
+            text-align: center;
+            line-height: rem-calc(48);
+
+        }
+    }
+    .footerCaption{
+        padding: 0 var(--pagePadding) var(--pagePadding) var(--pagePadding);
+        display: block;
+    }
 }
