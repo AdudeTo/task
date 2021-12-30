@@ -4,6 +4,7 @@ $desktop: #{rem-calc(1366)};
 
 //project
 $defaultFontColor: #3F3F3F;
+$defaultFontColorLight: #FFFFFF;
 $defaultBorderColor: #DCDCDC;
 $defaultBorderSize: #{rem-calc(1)};
 $defaultFontFamily: 'Roboto', sans-serif;
@@ -19,5 +20,6 @@ $formBGcolor: rgba(63, 63, 63, 0.6);
 $formElementHeight: #{rem-calc(60)};
 $formImputPadding: #{rem-calc(15)};
 $formButtonColor: #FFDE25;
+$formButtonHoverColor:#efb400;
 $formBoxShadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
 

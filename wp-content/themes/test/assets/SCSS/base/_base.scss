@@ -14,6 +14,9 @@
 
     --formBoxW:100%;
     --formBoxH:#{rem-calc(300)};
+    --formGap:#{rem-calc(15)};
+    --formTitleFontSize:#{rem-calc(24)};
+    --formTitleFontLH:#{rem-calc(28.8)};
 }
 @media only screen and (min-width: $tablet) {
     :root {
@@ -70,6 +73,8 @@
 
         --authorPostsElementW: #{rem-calc(538)};
         --authorPostsElementH: #{rem-calc(160)};
+        --formTitleFontSize:#{rem-calc(36)};
+        --formTitleFontLH:#{rem-calc(43.2)};
     }
     .leadPosts,
     .authorsList {
@@ -187,6 +192,27 @@
             justify-content: center;
             align-items: center;
             align-content: center; 
+            
+            .formTitle{
+                width: calc( #{var(--formBoxW)} - ( 2 * #{var(--formGap)}) );
+                margin-bottom: calc(#{var(--formGap)} * 2);                
+            }
+            input[type="text"]{
+                width: calc( #{var(--formBoxW)} - ( 2 * #{var(--formGap)}) - ( 2 * #{$formImputPadding}) );
+                margin-bottom: var(--formGap);
+            }
+            button[type="submit"]{
+                width: calc( #{var(--formBoxW)} - ( 2 * #{var(--formGap)}) + ( 2 * #{$defaultBorderSize}) );
+                margin-bottom: var(--formGap);
+            }
+
+            .formTitle{
+                color: $defaultFontColorLight;
+                text-align: center;
+                font-size: var(--formTitleFontSize);
+                line-height: var(--formTitleFontLH);
+                font-weight: 700;
+            }
         }
     }
     .callToform{

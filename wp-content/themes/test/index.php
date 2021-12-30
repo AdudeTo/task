@@ -42,7 +42,7 @@ get_header();  ?>
            
                 <div class="formTitle">Lorem ipsum dolor sit amet</div>            
                 <input name="email_address" type="text"  placeholder="Email" minlength="1" maxlength="255" required="required">
-                <input type="submit" value="Lorem ipsum dolor sit amet">      
+                <button class="--t05"  type="submit">Lorem ipsum dolor sit amet</button> 
             
         </form>        
     </div>

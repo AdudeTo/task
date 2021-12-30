@@ -72,6 +72,28 @@ input[type="submit"] {
   color: #FFFFFF;
 }
 
+button {
+  border: none;
+  outline: none;
+  padding: 0;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  height: calc(3.75rem + (2 * 0.0625rem));
+  padding: 0 0.9375rem;
+  cursor: pointer;
+}
+
+button[type="submit"] {
+  background-color: #FFDE25;
+  color: #FFFFFF;
+}
+
+button[type="submit"]:hover {
+  background-color: #efb400;
+}
+
 :root {
   --headerHeight: 15.625rem;
   --titleHeight: 9.375rem;
@@ -86,6 +108,9 @@ input[type="submit"] {
   --authorPostsElementH: 18.0625rem;
   --formBoxW:100%;
   --formBoxH:18.75rem;
+  --formGap:0.9375rem;
+  --formTitleFontSize:1.5rem;
+  --formTitleFontLH:1.8rem;
 }
 
 @media only screen and (min-width: 48rem) {
@@ -138,6 +163,8 @@ input[type="submit"] {
     --gap: 1.875rem;
     --authorPostsElementW: 33.625rem;
     --authorPostsElementH: 10rem;
+    --formTitleFontSize:2.25rem;
+    --formTitleFontLH:2.7rem;
   }
   .leadPosts ul li,
   .authorsList ul li {
@@ -279,6 +306,29 @@ input[type="submit"] {
           align-items: center;
   -ms-flex-line-pack: center;
       align-content: center;
+}
+
+.subscrybeForm .formBox form .formTitle {
+  width: calc( var(--formBoxW) - ( 2 * var(--formGap)));
+  margin-bottom: calc(var(--formGap) * 2);
+}
+
+.subscrybeForm .formBox form input[type="text"] {
+  width: calc( var(--formBoxW) - ( 2 * var(--formGap)) - ( 2 * 0.9375rem));
+  margin-bottom: var(--formGap);
+}
+
+.subscrybeForm .formBox form button[type="submit"] {
+  width: calc( var(--formBoxW) - ( 2 * var(--formGap)) + ( 2 * 0.0625rem));
+  margin-bottom: var(--formGap);
+}
+
+.subscrybeForm .formBox form .formTitle {
+  color: #FFFFFF;
+  text-align: center;
+  font-size: var(--formTitleFontSize);
+  line-height: var(--formTitleFontLH);
+  font-weight: 700;
 }
 
 .subscrybeForm .callToform {

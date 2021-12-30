@@ -49,3 +49,24 @@ input {
         color: $formButtonFontColor;    
     }
 }
+button{
+    border: none;
+    outline: none;
+    padding: 0;
+    margin: 0;
+    font-family: $defaultFontFamily;
+    font-weight: 700;
+    text-transform: uppercase; 
+    height: calc(#{$formElementHeight} + (2 * #{$defaultBorderSize})); 
+    padding: 0 $formImputPadding; 
+    cursor: pointer;
+
+    &[type="submit"]{
+        background-color: $formButtonColor;  
+        color: $formButtonFontColor;  
+        &:hover{
+            background-color: $formButtonHoverColor;
+        }  
+    }
+
+}
