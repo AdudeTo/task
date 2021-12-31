@@ -14,6 +14,12 @@ ul,ol,li{
     padding: 0;
     margin: 0;
 }
+
+p{
+    padding: 0;
+    margin: 0;
+}
+
 a{
     color: $defaultFontColor;
     &:hover{
@@ -26,6 +32,15 @@ a{
         margin: 0;
         font-weight: 700;
     }
+}
+h3{
+    font-size: rem-calc(20);
+    line-height: rem-calc(24.78);
+}
+p{
+    font-size: rem-calc(16);
+    line-height: rem-calc(20);
+
 }
 
 //form base set

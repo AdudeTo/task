@@ -13,6 +13,11 @@ ul, ol, li {
   margin: 0;
 }
 
+p {
+  padding: 0;
+  margin: 0;
+}
+
 a {
   color: #3F3F3F;
 }
@@ -49,6 +54,16 @@ H5 {
 H6 {
   margin: 0;
   font-weight: 700;
+}
+
+h3 {
+  font-size: 1.25rem;
+  line-height: 1.54875rem;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.25rem;
 }
 
 input {
@@ -117,6 +132,7 @@ button[type="submit"]:hover {
   --mainWidth: 100%;
   --leadPostsElementW: 100%;
   --leadPostsElementH: 6.25rem;
+  --leadPostsHlineMargin: 0.9375rem;
   --gap: 1.25rem;
   --authorPostsElementW: 100%;
   --authorPostsElementH: 18.0625rem;
@@ -130,6 +146,23 @@ button[type="submit"]:hover {
   --tagListMarginT: 3.125rem;
   --tagListMarginB: 3.125rem;
   --tagListGap: 1.875rem;
+}
+
+@media only screen and (max-width: 48rem) {
+  :root {
+    --leadPostsArrowSize: 2.125rem;
+  }
+  .leadPosts ul li::after {
+    content: "";
+    border-bottom: unset;
+    border-top: var(--leadPostsArrowSize) solid #1699d3;
+    border-left: var(--leadPostsArrowSize) solid transparent;
+    border-right: var(--leadPostsArrowSize) solid transparent;
+    right: calc(50% - var(--leadPostsArrowSize));
+    bottom: calc(-1 * var(--leadPostsArrowSize));
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+  }
 }
 
 @media only screen and (min-width: 48rem) {
@@ -146,6 +179,16 @@ button[type="submit"]:hover {
     --tagListMarginB: 4.6875rem;
     --tagListGap: unset;
     --footerCaptionW: 33.75rem;
+    --leadPostsArrowSize: 2.75rem;
+  }
+  .leadPosts ul li::after {
+    content: "";
+    border-bottom: unset;
+    border-top: var(--leadPostsArrowSize) solid #1699d3;
+    border-left: var(--leadPostsArrowSize) solid transparent;
+    border-right: var(--leadPostsArrowSize) solid transparent;
+    right: 1.4375rem;
+    bottom: calc(-1 * var(--leadPostsArrowSize));
   }
   .subscrybeForm .callToform {
     margin: 0 auto !important;
@@ -201,16 +244,16 @@ button[type="submit"]:hover {
   }
 }
 
-@media only screen and (min-width: 62.5rem) {
+@media only screen and (min-width: 85.375rem) {
   :root {
     --headerHeight: 37.5rem;
     --mainWidth: 69.375rem;
     --pagePadding: 0;
-    --leadPostsElementW: 21.75rem;
+    --leadPostsElementW: 31%;
     --leadPostsArrowSize: 3.375rem;
     --leadPostsElementH: 12.375rem;
     --gap: 1.875rem;
-    --authorPostsElementW: 33.625rem;
+    --authorPostsElementW: 48%;
     --authorPostsElementH: 10rem;
     --formTitleFontSize: 2.25rem;
     --formTitleFontLH: 2.7rem;
@@ -221,14 +264,17 @@ button[type="submit"]:hover {
   }
   .leadPosts ul li::after {
     content: "";
+    border-right: unset;
     border-left: var(--leadPostsArrowSize) solid #1699d3;
     border-top: var(--leadPostsArrowSize) solid transparent;
     border-bottom: var(--leadPostsArrowSize) solid transparent;
-    right: calc( -1 * var(--leadPostsArrowSize));
+    right: calc(-1 * var(--leadPostsArrowSize));
+    bottom: unset;
+    -webkit-transition: unset;
+    transition: unset;
   }
   .leadPosts ul li,
   .authorsList ul li {
-    margin-right: var(--gap);
     margin-bottom: 0 !important;
   }
   .authorsList {
@@ -304,17 +350,20 @@ button[type="submit"]:hover {
   text-align: center;
 }
 
-.main .leadPosts ul {
+.leadPosts ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
-.main .leadPosts ul li {
+.leadPosts ul li {
   width: var(--leadPostsElementW);
-  height: var(--leadPostsElementH);
+  min-height: var(--leadPostsElementH);
   margin-bottom: var(--gap);
   position: relative;
   display: -webkit-box;
@@ -325,14 +374,14 @@ button[type="submit"]:hover {
           align-items: center;
 }
 
-.main .leadPosts ul li .theNumber {
+.leadPosts ul li .theNumber {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   font-family: "Roboto", sans-serif;
   font-weight: 900;
-  font-size: 100px;
-  padding: 0 30px;
+  font-size: 106px;
+  padding: 0 25px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -341,7 +390,11 @@ button[type="submit"]:hover {
           align-items: center;
 }
 
-.main .leadPosts ul li::after {
+.leadPosts ul li .thePost h3 {
+  margin-bottom: var(--leadPostsHlineMargin);
+}
+
+.leadPosts ul li::after {
   content: "";
   display: inline-block !important;
   width: 0;
@@ -350,16 +403,16 @@ button[type="submit"]:hover {
   z-index: 50;
 }
 
-.main .leadPosts ul li:last-child {
+.leadPosts ul li:last-child {
   margin-right: 0;
   margin-bottom: 0;
 }
 
-.main .leadPosts ul li:last-child::after {
+.leadPosts ul li:last-child::after {
   content: none;
 }
 
-.main .authorsList ul {
+.authorsList ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -371,16 +424,19 @@ button[type="submit"]:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
-.main .authorsList ul li {
+.authorsList ul li {
   display: block;
   width: var(--authorPostsElementW);
   height: var(--authorPostsElementH);
   margin-bottom: var(--gap);
 }
 
-.main .authorsList ul li:last-child {
+.authorsList ul li:last-child {
   margin-right: 0;
 }
 

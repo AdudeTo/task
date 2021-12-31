@@ -7,6 +7,7 @@
     --mainWidth: 100%;
     --leadPostsElementW: 100%;
     --leadPostsElementH: #{rem-calc(100)};
+    --leadPostsHlineMargin: #{rem-calc(15)};
     --gap: #{rem-calc(20)};
     --authorPostsElementW: 100%;
     --authorPostsElementH: #{rem-calc(289)};
@@ -21,6 +22,32 @@
     --tagListMarginB: #{rem-calc(50)};
     --tagListGap: #{rem-calc(30)};
 }
+@media only screen and (max-width: $tablet) {
+    :root {
+        --leadPostsArrowSize: #{rem-calc(34)};
+    }
+    .leadPosts {
+        ul {
+            li {
+                &::after {
+                    content: "";
+                    border-bottom: unset;
+                    border-top: var(--leadPostsArrowSize) solid $defaultArrowColor;
+                    border-left: var(--leadPostsArrowSize) solid transparent;
+                    border-right: var(--leadPostsArrowSize) solid transparent;
+                    right: calc(50% - var(--leadPostsArrowSize));
+                    bottom: calc(-1 * var(--leadPostsArrowSize));
+                    transition: 0.5s;
+                    
+                }
+            }
+        }
+    }
+
+
+
+}
+
 @media only screen and (min-width: $tablet) {
     :root {
         --headerHeight: #{rem-calc(300)};
@@ -35,6 +62,22 @@
         --tagListMarginB: #{rem-calc(75)};
         --tagListGap: unset;
         --footerCaptionW: #{rem-calc(540)};
+        --leadPostsArrowSize: #{rem-calc(44)};
+    }
+    .leadPosts {
+        ul {
+            li {
+                &::after {
+                    content: "";
+                    border-bottom: unset;
+                    border-top: var(--leadPostsArrowSize) solid $defaultArrowColor;
+                    border-left: var(--leadPostsArrowSize) solid transparent;
+                    border-right: var(--leadPostsArrowSize) solid transparent;
+                    right: rem-calc(23);
+                    bottom: calc(-1 * var(--leadPostsArrowSize));                    
+                }
+            }
+        }
     }
     .subscrybeForm {
         .callToform {
@@ -97,12 +140,12 @@
         --headerHeight: #{rem-calc(600)};
         --mainWidth: #{rem-calc(1110)};
         --pagePadding: 0;
-        --leadPostsElementW: #{rem-calc(348)};
+        --leadPostsElementW: 31%;
         --leadPostsArrowSize: #{rem-calc(54)};
         --leadPostsElementH: #{rem-calc(198)};
         --gap: #{rem-calc(30)};
 
-        --authorPostsElementW: #{rem-calc(538)};
+        --authorPostsElementW: 48%;
         --authorPostsElementH: #{rem-calc(160)};
         --formTitleFontSize: #{rem-calc(36)};
         --formTitleFontLH: #{rem-calc(43.2)};
@@ -116,10 +159,13 @@
             li {
                 &::after {
                     content: "";
+                    border-right: unset;
                     border-left: var(--leadPostsArrowSize) solid $defaultArrowColor;
                     border-top: var(--leadPostsArrowSize) solid transparent;
                     border-bottom: var(--leadPostsArrowSize) solid transparent;
-                    right: calc( -1 * var(--leadPostsArrowSize));
+                    right: calc(-1 * var(--leadPostsArrowSize));
+                    bottom: unset;
+                    transition: unset;
                 }
             }
         }
@@ -128,7 +174,7 @@
     .authorsList {
         ul {
             li {
-                margin-right: var(--gap);
+               // margin-right: var(--gap);
                 margin-bottom: 0 !important;
             }
         }
@@ -198,66 +244,69 @@
     text-align: center;
 }
 
-.main {
-    .leadPosts {
-        ul {
+.leadPosts {
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content:space-between;
+        li {
+            //display: block;
+            width: var(--leadPostsElementW);
+            min-height: var(--leadPostsElementH);
+            margin-bottom: var(--gap);
+            position: relative;
             display: flex;
-            flex-wrap: wrap;
-            li {
-                .theNumber { 
-                    display: flex;
-                    font-family: $defaultFontFamily;
-                    font-weight: 900;
-                    font-size: 100px;
-                    padding: 0 30px;
-                    justify-content: center;
-                    align-items: center;
-
-                }
-                //display: block;
-                width: var(--leadPostsElementW);
-                height: var(--leadPostsElementH);
-                margin-bottom: var(--gap);
-                position: relative;
+            //justify-content: center;
+            align-items: center;
+            .theNumber {
                 display: flex;
-                //justify-content: center;
+                font-family: $defaultFontFamily;
+                font-weight: 900;
+                font-size: 106px;
+                padding: 0 25px;
+                justify-content: center;
                 align-items: center;
-                &::after {
-                    content: "";
-                    display: inline-block !important;
-                    width: 0;
-                    height: 0;
-                   // border-left: 54px solid #1699d3;
-                   // border-top: 54px solid transparent;
-                   // border-bottom: 54px solid transparent;
-                    position: absolute;
-                   // top: 0;                    
-                    z-index: 50;
+            }
+            .thePost {
+                h3 {
+                    margin-bottom: var(--leadPostsHlineMargin);
                 }
-                &:last-child {
-                    margin-right: 0;
-                    margin-bottom: 0;
-                    &::after {
-                        content: none;
-                    }
+            }
+            &::after {
+                content: "";
+                display: inline-block !important;
+                width: 0;
+                height: 0;
+                position: absolute;
+                z-index: 50;
+               
+
+                
+            }
+            &:last-child {
+                margin-right: 0;
+                margin-bottom: 0;
+                &::after {
+                    content: none;
                 }
             }
         }
     }
-    .authorsList {
-        ul {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-            li {
-                display: block;
-                width: var(--authorPostsElementW);
-                height: var(--authorPostsElementH);
-                margin-bottom: var(--gap);
-                &:last-child {
-                    margin-right: 0;
-                }
+}
+.authorsList {
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        justify-content:space-between;
+        li {
+            display: block;
+            width: var(--authorPostsElementW);
+            height: var(--authorPostsElementH);
+            margin-bottom: var(--gap);
+            &:last-child {
+                margin-right: 0;
             }
         }
     }
