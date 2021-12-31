@@ -288,8 +288,8 @@
                 display: flex;
                 font-family: $defaultFontFamily;
                 font-weight: 900;
-                font-size: 106px;
-                padding: 0 25px;
+                font-size: rem-calc(106);
+                padding: 0 rem-calc(25);;
                 justify-content: center;
                 align-items: center;
             }
@@ -400,7 +400,7 @@
         button {
             height: var(--callToFormButtonH);
             width: 90%;
-            max-width: 250px;
+            max-width: rem-calc(250);
         }
     }
 }
@@ -416,8 +416,8 @@
         gap: var(--tagListGap);
         li {
             display: block;
-            width: 101px;
-            height: 90px;
+            width: rem-calc(101);;
+            height: rem-calc(90);;
             &.icon {
                 background-position: top center;
                 background-repeat: no-repeat;

@@ -409,8 +409,8 @@ button[type="submit"]:hover {
   display: flex;
   font-family: "Roboto", sans-serif;
   font-weight: 900;
-  font-size: 106px;
-  padding: 0 25px;
+  font-size: 6.625rem;
+  padding: 0 1.5625rem;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -539,7 +539,7 @@ button[type="submit"]:hover {
 .subscrybeForm .callToform button {
   height: var(--callToFormButtonH);
   width: 90%;
-  max-width: 250px;
+  max-width: 15.625rem;
 }
 
 .tagList {
@@ -566,8 +566,8 @@ button[type="submit"]:hover {
 
 .tagList ul li {
   display: block;
-  width: 101px;
-  height: 90px;
+  width: 6.3125rem;
+  height: 5.625rem;
 }
 
 .tagList ul li.icon {
