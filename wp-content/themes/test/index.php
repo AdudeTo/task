@@ -10,16 +10,31 @@ get_header();  ?>
 <section class="leadPosts">
     <ul>
         <li class="--border --t05">
-            <h3>post title</h3>
-            <span>exerp</span>
+            <div class="theNumber">
+                1
+            </div>
+            <div class="thePost">
+                <h3>Lorem ipsum dolor</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur</p>
+            </div>
         </li>
         <li class="--border --t05">
-            <h3>post title</h3>
-            <span>exerp</span>
+            <div class="theNumber">
+                2
+            </div>
+            <div class="thePost">
+                <h3>Lorem ipsum dolor</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur</p>
+            </div>
         </li>
         <li class="--border --t05">
-            <h3>post title</h3>
-            <span>exerp</span>
+            <div class="theNumber">
+                3
+            </div>
+            <div class="thePost">
+                <h3>Lorem ipsum dolor</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur</p>
+            </div>
         </li>
     </ul>
 </section>
@@ -36,7 +51,7 @@ get_header();  ?>
         </li>
     </ul>
 </section>
-<section class="subscrybeForm">
+<section id="subscrybeForm" class="subscrybeForm">
     <div class="formBox">    
         <form class="--t05">    
            
@@ -47,7 +62,7 @@ get_header();  ?>
         </form>        
     </div>
     <div class="callToform">
-        <button class=" --t05">Lorem ipsum dolor sit amet</button>
+        <a href="#subscrybeForm"><button class=" --t05">Lorem ipsum dolor sit amet</button></a>
     </div>
 </section>
 <section class="tagList">

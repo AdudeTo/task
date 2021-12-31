@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;700;900&display=swap");
 body {
   padding: 0;
   margin: 0;
@@ -120,11 +120,11 @@ button[type="submit"]:hover {
   --gap: 1.25rem;
   --authorPostsElementW: 100%;
   --authorPostsElementH: 18.0625rem;
-  --formBoxW:100%;
-  --formBoxH:18.75rem;
-  --formGap:0.9375rem;
-  --formTitleFontSize:1.5rem;
-  --formTitleFontLH:1.8rem;
+  --formBoxW: 100%;
+  --formBoxH: 18.75rem;
+  --formGap: 0.9375rem;
+  --formTitleFontSize: 1.5rem;
+  --formTitleFontLH: 1.8rem;
   --callToFormButtonW: 300px;
   --callToFormButtonH: 2rem;
   --tagListMarginT: 3.125rem;
@@ -139,7 +139,7 @@ button[type="submit"]:hover {
     --pageTitleLH: 2.8125rem;
     --authorPostsElementW: 33.625rem;
     --authorPostsElementH: 10rem;
-    --formBoxW:20.625rem;
+    --formBoxW: 20.625rem;
     --callToFormButtonW: 33.75rem;
     --callToFormButtonH: 3.75rem;
     --tagListMarginT: 3.125rem;
@@ -149,11 +149,11 @@ button[type="submit"]:hover {
   }
   .subscrybeForm .callToform {
     margin: 0 auto !important;
-    padding: 0  !important;
-    position: relative  !important;
-    top: unset  !important;
-    left: unset  !important;
-    z-index: unset  !important;
+    padding: 0 !important;
+    position: relative !important;
+    top: unset !important;
+    left: unset !important;
+    z-index: unset !important;
   }
   .authorsList {
     width: calc(var(--authorPostsElementW) + var(--gap));
@@ -201,22 +201,30 @@ button[type="submit"]:hover {
   }
 }
 
-@media only screen and (min-width: 85.375rem) {
+@media only screen and (min-width: 62.5rem) {
   :root {
     --headerHeight: 37.5rem;
     --mainWidth: 69.375rem;
     --pagePadding: 0;
     --leadPostsElementW: 21.75rem;
+    --leadPostsArrowSize: 3.375rem;
     --leadPostsElementH: 12.375rem;
     --gap: 1.875rem;
     --authorPostsElementW: 33.625rem;
     --authorPostsElementH: 10rem;
-    --formTitleFontSize:2.25rem;
-    --formTitleFontLH:2.7rem;
-    --formBoxW:21.875rem;
+    --formTitleFontSize: 2.25rem;
+    --formTitleFontLH: 2.7rem;
+    --formBoxW: 21.875rem;
     --auhtorListBottomSpace: 5.375rem;
     --tagListMarginT: 6.25rem;
     --tagListMarginB: 3.125rem;
+  }
+  .leadPosts ul li::after {
+    content: "";
+    border-left: var(--leadPostsArrowSize) solid #1699d3;
+    border-top: var(--leadPostsArrowSize) solid transparent;
+    border-bottom: var(--leadPostsArrowSize) solid transparent;
+    right: calc( -1 * var(--leadPostsArrowSize));
   }
   .leadPosts ul li,
   .authorsList ul li {
@@ -305,15 +313,50 @@ button[type="submit"]:hover {
 }
 
 .main .leadPosts ul li {
-  display: block;
   width: var(--leadPostsElementW);
   height: var(--leadPostsElementH);
   margin-bottom: var(--gap);
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main .leadPosts ul li .theNumber {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  font-size: 100px;
+  padding: 0 30px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main .leadPosts ul li::after {
+  content: "";
+  display: inline-block !important;
+  width: 0;
+  height: 0;
+  position: absolute;
+  z-index: 50;
 }
 
 .main .leadPosts ul li:last-child {
   margin-right: 0;
   margin-bottom: 0;
+}
+
+.main .leadPosts ul li:last-child::after {
+  content: none;
 }
 
 .main .authorsList ul {
@@ -366,17 +409,17 @@ button[type="submit"]:hover {
 }
 
 .subscrybeForm .formBox form .formTitle {
-  width: calc( var(--formBoxW) - ( 2 * var(--formGap)));
+  width: calc(var(--formBoxW) - (2 * var(--formGap)));
   margin-bottom: calc(var(--formGap) * 2);
 }
 
 .subscrybeForm .formBox form input[type="text"] {
-  width: calc( var(--formBoxW) - ( 2 * var(--formGap)) - ( 2 * 0.9375rem));
+  width: calc(var(--formBoxW) - (2 * var(--formGap)) - (2 * 0.9375rem));
   margin-bottom: var(--formGap);
 }
 
 .subscrybeForm .formBox form button[type="submit"] {
-  width: calc( var(--formBoxW) - ( 2 * var(--formGap)) + ( 2 * 0.0625rem));
+  width: calc(var(--formBoxW) - (2 * var(--formGap)) + (2 * 0.0625rem));
   margin-bottom: var(--formGap);
 }
 

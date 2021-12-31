@@ -10,17 +10,16 @@
     --gap: #{rem-calc(20)};
     --authorPostsElementW: 100%;
     --authorPostsElementH: #{rem-calc(289)};
-    --formBoxW:100%;
-    --formBoxH:#{rem-calc(300)};
-    --formGap:#{rem-calc(15)};
-    --formTitleFontSize:#{rem-calc(24)};
-    --formTitleFontLH:#{rem-calc(28.8)};
+    --formBoxW: 100%;
+    --formBoxH: #{rem-calc(300)};
+    --formGap: #{rem-calc(15)};
+    --formTitleFontSize: #{rem-calc(24)};
+    --formTitleFontLH: #{rem-calc(28.8)};
     --callToFormButtonW: 300px;
     --callToFormButtonH: #{$defaultButtonHsmall};
     --tagListMarginT: #{rem-calc(50)};
     --tagListMarginB: #{rem-calc(50)};
     --tagListGap: #{rem-calc(30)};
-      
 }
 @media only screen and (min-width: $tablet) {
     :root {
@@ -29,7 +28,7 @@
         --pageTitleLH: #{rem-calc(45)};
         --authorPostsElementW: #{rem-calc(538)};
         --authorPostsElementH: #{rem-calc(160)};
-        --formBoxW:#{rem-calc(330)};
+        --formBoxW: #{rem-calc(330)};
         --callToFormButtonW: #{rem-calc(540)};
         --callToFormButtonH: #{$defaultButtonH};
         --tagListMarginT: #{rem-calc(50)};
@@ -37,64 +36,61 @@
         --tagListGap: unset;
         --footerCaptionW: #{rem-calc(540)};
     }
-    .subscrybeForm{
-        .callToform{
+    .subscrybeForm {
+        .callToform {
             margin: 0 auto !important;
-            padding: 0  !important;
-            position: relative  !important;
-            top: unset  !important;
-            left: unset  !important;
-            z-index: unset  !important;
+            padding: 0 !important;
+            position: relative !important;
+            top: unset !important;
+            left: unset !important;
+            z-index: unset !important;
         }
     }
-    .authorsList{
+    .authorsList {
         width: calc(var(--authorPostsElementW) + var(--gap));
         margin-left: auto;
         margin-right: auto;
     }
-    .formBox{
+    .formBox {
         width: var(--formBoxW);
-        height: var(--headerHeight) !important;         
+        height: var(--headerHeight) !important;
         position: absolute !important;
         top: 0 !important ;
         left: 0 !important;
         width: 100% !important;
-        z-index: 10 !important;        
-        form{
-            width: var(--formBoxW) !important;            
-            background-color: $formBGcolor; 
-            height: var(--headerHeight) !important; 
+        z-index: 10 !important;
+        form {
+            width: var(--formBoxW) !important;
+            background-color: $formBGcolor;
+            height: var(--headerHeight) !important;
             float: right;
             margin-right: var(--pagePadding);
         }
     }
-    .callToform{       
+    .callToform {
         max-width: var(--callToFormButtonW);
-        button{
+        button {
             width: 100% !important;
             max-width: unset !important;
-        } 
+        }
     }
-    .footer { 
-        .pageList{ 
-            text-align: center; 
+    .footer {
+        .pageList {
+            text-align: center;
             justify-content: center;
-            gap: rem-calc(30);      
-            a{               
+            gap: rem-calc(30);
+            a {
                 width: unset !important;
-                line-height: rem-calc(48);    
+                line-height: rem-calc(48);
             }
         }
-        .footerCaption{
+        .footerCaption {
             max-width: var(--footerCaptionW);
             margin: auto;
             padding-bottom: var(--pagePadding);
-
         }
     }
 }
-
-
 
 @media only screen and (min-width: $desktop) {
     :root {
@@ -102,17 +98,31 @@
         --mainWidth: #{rem-calc(1110)};
         --pagePadding: 0;
         --leadPostsElementW: #{rem-calc(348)};
+        --leadPostsArrowSize: #{rem-calc(54)};
         --leadPostsElementH: #{rem-calc(198)};
         --gap: #{rem-calc(30)};
 
         --authorPostsElementW: #{rem-calc(538)};
         --authorPostsElementH: #{rem-calc(160)};
-        --formTitleFontSize:#{rem-calc(36)};
-        --formTitleFontLH:#{rem-calc(43.2)};
-        --formBoxW:#{rem-calc(350)};
+        --formTitleFontSize: #{rem-calc(36)};
+        --formTitleFontLH: #{rem-calc(43.2)};
+        --formBoxW: #{rem-calc(350)};
         --auhtorListBottomSpace: #{rem-calc(86)};
         --tagListMarginT: #{rem-calc(100)};
         --tagListMarginB: #{rem-calc(50)};
+    }
+    .leadPosts {
+        ul {
+            li {
+                &::after {
+                    content: "";
+                    border-left: var(--leadPostsArrowSize) solid $defaultArrowColor;
+                    border-top: var(--leadPostsArrowSize) solid transparent;
+                    border-bottom: var(--leadPostsArrowSize) solid transparent;
+                    right: calc( -1 * var(--leadPostsArrowSize));
+                }
+            }
+        }
     }
     .leadPosts,
     .authorsList {
@@ -123,18 +133,18 @@
             }
         }
     }
-    .authorsList{
+    .authorsList {
         width: 100%;
         margin-bottom: var(--auhtorListBottomSpace);
     }
-    .formBox{   
-        form{            
+    .formBox {
+        form {
             margin-right: 20%;
-            width: var(--formBoxW) !important; 
+            width: var(--formBoxW) !important;
         }
     }
-    .footer { 
-        .footerCaption{
+    .footer {
+        .footerCaption {
             max-width: var(--mainWidth);
         }
     }
@@ -188,19 +198,48 @@
     text-align: center;
 }
 
-.main {     
+.main {
     .leadPosts {
         ul {
             display: flex;
             flex-wrap: wrap;
             li {
-                display: block;
+                .theNumber { 
+                    display: flex;
+                    font-family: $defaultFontFamily;
+                    font-weight: 900;
+                    font-size: 100px;
+                    padding: 0 30px;
+                    justify-content: center;
+                    align-items: center;
+
+                }
+                //display: block;
                 width: var(--leadPostsElementW);
                 height: var(--leadPostsElementH);
-                margin-bottom: var(--gap);                
+                margin-bottom: var(--gap);
+                position: relative;
+                display: flex;
+                //justify-content: center;
+                align-items: center;
+                &::after {
+                    content: "";
+                    display: inline-block !important;
+                    width: 0;
+                    height: 0;
+                   // border-left: 54px solid #1699d3;
+                   // border-top: 54px solid transparent;
+                   // border-bottom: 54px solid transparent;
+                    position: absolute;
+                   // top: 0;                    
+                    z-index: 50;
+                }
                 &:last-child {
-                    margin-right: 0;  
-                    margin-bottom: 0;                  
+                    margin-right: 0;
+                    margin-bottom: 0;
+                    &::after {
+                        content: none;
+                    }
                 }
             }
         }
@@ -224,34 +263,34 @@
     }
 }
 
-.subscrybeForm{
-    .formBox{
+.subscrybeForm {
+    .formBox {
         width: var(--formBoxW);
-        height: var(--formBoxH);         
-        form{
+        height: var(--formBoxH);
+        form {
             width: var(--formBoxW);
-            height: var(--formBoxH); 
-            background-color: $formBGcolor;  
-            display: flex;  
+            height: var(--formBoxH);
+            background-color: $formBGcolor;
+            display: flex;
             flex-wrap: wrap;
             justify-content: center;
             align-items: center;
-            align-content: center; 
-            
-            .formTitle{
-                width: calc( #{var(--formBoxW)} - ( 2 * #{var(--formGap)}) );
-                margin-bottom: calc(#{var(--formGap)} * 2);                
+            align-content: center;
+
+            .formTitle {
+                width: calc(#{var(--formBoxW)} - (2 * #{var(--formGap)}));
+                margin-bottom: calc(#{var(--formGap)} * 2);
             }
-            input[type="text"]{
-                width: calc( #{var(--formBoxW)} - ( 2 * #{var(--formGap)}) - ( 2 * #{$formImputPadding}) );
+            input[type="text"] {
+                width: calc(#{var(--formBoxW)} - (2 * #{var(--formGap)}) - (2 * #{$formImputPadding}));
                 margin-bottom: var(--formGap);
             }
-            button[type="submit"]{
-                width: calc( #{var(--formBoxW)} - ( 2 * #{var(--formGap)}) + ( 2 * #{$defaultBorderSize}) );
+            button[type="submit"] {
+                width: calc(#{var(--formBoxW)} - (2 * #{var(--formGap)}) + (2 * #{$defaultBorderSize}));
                 margin-bottom: var(--formGap);
             }
 
-            .formTitle{
+            .formTitle {
                 color: $defaultFontColorLight;
                 text-align: center;
                 font-size: var(--formTitleFontSize);
@@ -260,53 +299,53 @@
             }
         }
     }
-    .callToform{
+    .callToform {
         width: 100%;
-        height: var(--callToFormButtonH);        
+        height: var(--callToFormButtonH);
         margin: 0 auto;
         padding: 0;
         position: absolute;
-        top: calc(var(--headerHeight) - #{var(--callToFormButtonH)} - #{var(--pagePadding)} );
+        top: calc(var(--headerHeight) - #{var(--callToFormButtonH)} - #{var(--pagePadding)});
         left: 0;
         z-index: 100;
         text-align: center;
-        button{
-            height: var(--callToFormButtonH); 
+        button {
+            height: var(--callToFormButtonH);
             width: 90%;
             max-width: 250px;
         }
     }
 }
-.tagList{  
-    margin-top: var(--tagListMarginT) ;
-    margin-bottom: var(--tagListMarginB) ;
-    ul{
-        display: flex;  
+.tagList {
+    margin-top: var(--tagListMarginT);
+    margin-bottom: var(--tagListMarginB);
+    ul {
+        display: flex;
         flex-wrap: wrap;
         justify-content: center;
         align-items: center;
-        align-content: center; 
+        align-content: center;
         gap: var(--tagListGap);
-        li{
+        li {
             display: block;
             width: 101px;
             height: 90px;
-            &.icon{
+            &.icon {
                 background-position: top center;
                 background-repeat: no-repeat;
-                &--www{
+                &--www {
                     background-image: url("../images/icons/www.png");
                 }
-                &--html{
+                &--html {
                     background-image: url("../images/icons/html.png");
                 }
-                &--js{
+                &--js {
                     background-image: url("../images/icons/js.png");
                 }
-                &--css{
+                &--css {
                     background-image: url("../images/icons/css.png");
                 }
-                &--wp{
+                &--wp {
                     background-image: url("../images/icons/wp.png");
                 }
             }
@@ -320,19 +359,18 @@
     background: $defaultFooterBackground;
     text-align: center;
     font-size: rem-calc(16);
-    line-height: rem-calc(20.81); 
-    .pageList{        
+    line-height: rem-calc(20.81);
+    .pageList {
         display: flex;
-        flex-wrap: wrap;              
-        a{
+        flex-wrap: wrap;
+        a {
             display: inline-block;
             width: 100%;
             text-align: center;
             line-height: rem-calc(48);
-
         }
     }
-    .footerCaption{
+    .footerCaption {
         padding: 0 var(--pagePadding) var(--pagePadding) var(--pagePadding);
         display: block;
     }
