@@ -18,6 +18,8 @@ ul,ol,li{
 p{
     padding: 0;
     margin: 0;
+    font-size: rem-calc(16);
+    line-height: rem-calc(20);
 }
 
 a{
@@ -25,6 +27,11 @@ a{
     &:hover{
         color: $defaultLinkHover;
     }  
+}
+figure{
+    margin: 0;
+    padding: 0;
+    display: inline-block;
 }
 
 @for $i from 1 through 6 {
@@ -36,11 +43,6 @@ a{
 h3{
     font-size: rem-calc(20);
     line-height: rem-calc(24.78);
-}
-p{
-    font-size: rem-calc(16);
-    line-height: rem-calc(20);
-
 }
 
 //form base set
@@ -93,5 +95,4 @@ button{
             background-color: $formButtonHoverColor;
         }  
     }
-
 }

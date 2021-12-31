@@ -16,6 +16,8 @@ ul, ol, li {
 p {
   padding: 0;
   margin: 0;
+  font-size: 1rem;
+  line-height: 1.25rem;
 }
 
 a {
@@ -24,6 +26,12 @@ a {
 
 a:hover {
   color: #000000;
+}
+
+figure {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
 }
 
 H1 {
@@ -59,11 +67,6 @@ H6 {
 h3 {
   font-size: 1.25rem;
   line-height: 1.54875rem;
-}
-
-p {
-  font-size: 1rem;
-  line-height: 1.25rem;
 }
 
 input {
@@ -136,12 +139,15 @@ button[type="submit"]:hover {
   --gap: 1.25rem;
   --authorPostsElementW: 100%;
   --authorPostsElementH: 18.0625rem;
+  --authorPostsHlineMargin: 0.9375rem;
+  --authorPostsImgContainerW: 9.375rem;
+  --authorPostsImgWH: 6.25rem;
   --formBoxW: 100%;
   --formBoxH: 18.75rem;
   --formGap: 0.9375rem;
   --formTitleFontSize: 1.5rem;
   --formTitleFontLH: 1.8rem;
-  --callToFormButtonW: 300px;
+  --callToFormButtonW: 18.75rem;
   --callToFormButtonH: 2rem;
   --tagListMarginT: 3.125rem;
   --tagListMarginB: 3.125rem;
@@ -151,6 +157,7 @@ button[type="submit"]:hover {
 @media only screen and (max-width: 48rem) {
   :root {
     --leadPostsArrowSize: 2.125rem;
+    --authorPostsImgContainerW: 100%;
   }
   .leadPosts ul li::after {
     content: "";
@@ -162,6 +169,16 @@ button[type="submit"]:hover {
     bottom: calc(-1 * var(--leadPostsArrowSize));
     -webkit-transition: 0.5s;
     transition: 0.5s;
+  }
+  .authorsList ul li {
+    display: block;
+  }
+  .authorsList ul li figure {
+    margin: var(--gap) auto;
+  }
+  .authorsList ul li .thePost {
+    text-align: center;
+    padding: 0 var(--gap);
   }
 }
 
@@ -190,6 +207,18 @@ button[type="submit"]:hover {
     right: 1.4375rem;
     bottom: calc(-1 * var(--leadPostsArrowSize));
   }
+  .authorsList ul li {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .authorsList ul li figure {
+    width: 100%;
+  }
   .subscrybeForm .callToform {
     margin: 0 auto !important;
     padding: 0 !important;
@@ -199,7 +228,7 @@ button[type="submit"]:hover {
     z-index: unset !important;
   }
   .authorsList {
-    width: calc(var(--authorPostsElementW) + var(--gap));
+    width: var(--authorPostsElementW);
     margin-left: auto;
     margin-right: auto;
   }
@@ -418,26 +447,34 @@ button[type="submit"]:hover {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
 
 .authorsList ul li {
-  display: block;
   width: var(--authorPostsElementW);
-  height: var(--authorPostsElementH);
+  min-height: var(--authorPostsElementH);
   margin-bottom: var(--gap);
 }
 
 .authorsList ul li:last-child {
   margin-right: 0;
+}
+
+.authorsList ul li figure {
+  min-width: var(--authorPostsImgContainerW);
+  text-align: center;
+}
+
+.authorsList ul li figure img {
+  width: var(--authorPostsImgWH);
+  height: var(--authorPostsImgWH);
+  border-radius: calc(var(--authorPostsImgWH) / 2);
+}
+
+.authorsList ul li .thePost h3 {
+  margin-bottom: var(--authorPostsHlineMargin);
 }
 
 .subscrybeForm .formBox {

@@ -11,12 +11,15 @@
     --gap: #{rem-calc(20)};
     --authorPostsElementW: 100%;
     --authorPostsElementH: #{rem-calc(289)};
+    --authorPostsHlineMargin: #{rem-calc(15)};
+    --authorPostsImgContainerW: #{rem-calc(150)};
+    --authorPostsImgWH: #{rem-calc(100)};
     --formBoxW: 100%;
     --formBoxH: #{rem-calc(300)};
     --formGap: #{rem-calc(15)};
     --formTitleFontSize: #{rem-calc(24)};
     --formTitleFontLH: #{rem-calc(28.8)};
-    --callToFormButtonW: 300px;
+    --callToFormButtonW: #{rem-calc(300)};
     --callToFormButtonH: #{$defaultButtonHsmall};
     --tagListMarginT: #{rem-calc(50)};
     --tagListMarginB: #{rem-calc(50)};
@@ -25,6 +28,7 @@
 @media only screen and (max-width: $tablet) {
     :root {
         --leadPostsArrowSize: #{rem-calc(34)};
+        --authorPostsImgContainerW: 100%;
     }
     .leadPosts {
         ul {
@@ -37,15 +41,25 @@
                     border-right: var(--leadPostsArrowSize) solid transparent;
                     right: calc(50% - var(--leadPostsArrowSize));
                     bottom: calc(-1 * var(--leadPostsArrowSize));
-                    transition: 0.5s;
-                    
+                    transition: 0.5s;                    
                 }
             }
         }
     }
-
-
-
+    .authorsList {
+        ul {
+            li {  
+                display: block;                
+                figure{                   
+                    margin: var(--gap) auto;
+                }
+                .thePost{
+                    text-align: center;
+                    padding: 0 var(--gap);
+                }
+            }
+        }
+    }
 }
 
 @media only screen and (min-width: $tablet) {
@@ -79,6 +93,18 @@
             }
         }
     }
+    .authorsList {
+        ul {
+            li {  
+                position: relative;
+                display: flex;            
+                align-items: center;           
+                figure{
+                    width: 100%;
+                }
+            }
+        }
+    }
     .subscrybeForm {
         .callToform {
             margin: 0 auto !important;
@@ -90,7 +116,7 @@
         }
     }
     .authorsList {
-        width: calc(var(--authorPostsElementW) + var(--gap));
+        width: var(--authorPostsElementW);
         margin-left: auto;
         margin-right: auto;
     }
@@ -297,17 +323,30 @@
     ul {
         display: flex;
         flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
         justify-content:space-between;
-        li {
-            display: block;
+        li {            
             width: var(--authorPostsElementW);
-            height: var(--authorPostsElementH);
+            min-height: var(--authorPostsElementH);
             margin-bottom: var(--gap);
             &:last-child {
                 margin-right: 0;
             }
+            figure{
+                min-width: var(--authorPostsImgContainerW);
+                text-align: center;
+                img{
+                    width: var(--authorPostsImgWH);
+                    height: var(--authorPostsImgWH);
+                    border-radius: calc(var(--authorPostsImgWH) / 2);
+                    
+                }
+            }
+            .thePost {
+                h3 {
+                    margin-bottom: var(--authorPostsHlineMargin);
+                }
+            }
+            
         }
     }
 }
