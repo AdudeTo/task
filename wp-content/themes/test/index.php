@@ -9,6 +9,8 @@ get_header();  ?>
     <section class="leadPosts">
         <h1 class="pageTitle">Lorem ipsum dolor sit amet</h1>
         <ul>
+            <!-- LOOP START leadPosts -->
+            <!-- LOOP ITEM START -->
             <li class="--border --t05">
                 <div class="theNumber">
                     1
@@ -18,6 +20,7 @@ get_header();  ?>
                     <p>Lorem ipsum dolor sit amet, consectetur</p>
                 </div>
             </li>
+            <!-- LOOP ITEM END -->
             <li class="--border --t05">
                 <div class="theNumber">
                     2
@@ -36,12 +39,15 @@ get_header();  ?>
                     <p>Lorem ipsum dolor sit amet, consectetur</p>
                 </div>
             </li>
+            <!-- LOOP END leadPosts -->
         </ul>
     </section>
 
     <section class="authorsList">
         <h2 class="sectionTitle">Curabitur ut facilisis arcu</h2>
         <ul>
+            <!-- LOOP START authorsList -->
+            <!-- LOOP ITEM START -->
             <li class="--border --t05">
                 <div class="theAuthor">
                     <figure>
@@ -53,6 +59,7 @@ get_header();  ?>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc consequat quam sem, id facilisis odio tempus eu.</p>
                 </div>
             </li>
+            <!-- LOOP ITEM END -->
             <li class="--border --t05">
                 <div class="theAuthor">
                     <figure>
@@ -64,20 +71,20 @@ get_header();  ?>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc consequat quam sem, id facilisis odio tempus eu.</p>
                 </div>
             </li>
+            <!-- LOOP END authorsList -->
         </ul>
     </section>
-    <section id="subscrybeForm" class="subscrybeForm">
-        <div class="formBox">    
-            <form class="--t05">    
-            
+    <section  class="subscrybeForm">
+        <div id="formBox" class="formBox">    
+            <form class="--t05">            
                     <div class="formTitle">Lorem ipsum dolor sit amet</div>            
-                    <input name="email_address" type="text"  placeholder="Email" minlength="1" maxlength="255" required="required">
-                    <button class="--t05"  type="submit">Lorem ipsum dolor sit amet</button> 
-                
+                    <input name="email_address" data-status="0" type="text"  placeholder="Email" minlength="1" maxlength="255" required="required">
+                    <button onClick="return false" id="subscrybeForm" class="subscrybeFormButton --t05"  type="submit">Lorem ipsum dolor sit amet</button>                
             </form>        
         </div>
-        <div class="callToform">
-            <a href="#subscrybeForm"><button class=" --t05">Lorem ipsum dolor sit amet</button></a>
+        <div id="callToform" class="callToform">
+            <!-- Simply click to move the screen to the form //no JS anchor -->
+            <!--a href="#formBox"--><button class=" --t05">Lorem ipsum dolor sit amet</button><!--/a-->
         </div>
     </section>
     <section class="tagList">

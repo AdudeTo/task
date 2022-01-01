@@ -25,12 +25,22 @@
     --tagListMarginB: #{rem-calc(50)};
     --tagListGap: #{rem-calc(30)};
 }
+//anim
+.--t05 {
+    transition: 0.5s;
+}
+
+//options
+.--border {
+    border: solid $defaultBorderSize $defaultBorderColor;
+}
+
 @media only screen and (max-width: $tablet) {
     :root {
         --leadPostsArrowSize: #{rem-calc(34)};
         --authorPostsImgContainerW: 100%;
     }
-    .leadPosts {
+    .leadPosts { 
         ul {
             li {
                 &::after {
@@ -94,6 +104,9 @@
         }
     }
     .authorsList {
+        width: var(--authorPostsElementW);
+        margin-left: auto;
+        margin-right: auto;
         ul {
             li {  
                 position: relative;
@@ -114,11 +127,6 @@
             left: unset !important;
             z-index: unset !important;
         }
-    }
-    .authorsList {
-        width: var(--authorPostsElementW);
-        margin-left: auto;
-        margin-right: auto;
     }
     .formBox {
         width: var(--formBoxW);
@@ -170,7 +178,6 @@
         --leadPostsArrowSize: #{rem-calc(54)};
         --leadPostsElementH: #{rem-calc(198)};
         --gap: #{rem-calc(30)};
-
         --authorPostsElementW: 48%;
         --authorPostsElementH: #{rem-calc(160)};
         --formTitleFontSize: #{rem-calc(36)};
@@ -221,15 +228,6 @@
     }
 }
 
-//smoother
-.--t05 {
-    transition: 0.5s;
-}
-
-//settings
-.--border {
-    border: solid $defaultBorderSize $defaultBorderColor;
-}
 
 .header {
     width: 100%;

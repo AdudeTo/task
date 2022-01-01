@@ -4,7 +4,7 @@
  */
 
 wp_enqueue_style( 'base', get_template_directory_uri() . '/assets/SCSS/main.css',false,'1.1','all');
-wp_enqueue_script( 'app', get_template_directory_uri() . '/assets/js/app.js',false,'1.1','all');
+wp_enqueue_script( 'app', get_template_directory_uri() . '/assets/js/app.js',true,'1.1','all');
 
 function disable_embeds_code_init() {
 
