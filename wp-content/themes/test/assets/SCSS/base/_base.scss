@@ -199,8 +199,7 @@
     .leadPosts,
     .authorsList {
         ul {
-            li {
-               // margin-right: var(--gap);
+            li {               
                 margin-bottom: 0 !important;
             }
         }
@@ -275,14 +274,12 @@
         display: flex;
         flex-wrap: wrap;
         justify-content:space-between;
-        li {
-            //display: block;
+        li {            
             width: var(--leadPostsElementW);
             min-height: var(--leadPostsElementH);
             margin-bottom: var(--gap);
             position: relative;
-            display: flex;
-            //justify-content: center;
+            display: flex;            
             align-items: center;
             .theNumber {
                 display: flex;
@@ -304,10 +301,7 @@
                 width: 0;
                 height: 0;
                 position: absolute;
-                z-index: 50;
-               
-
-                
+                z-index: 50;                 
             }
             &:last-child {
                 margin-right: 0;
@@ -337,8 +331,7 @@
                 img{
                     width: var(--authorPostsImgWH);
                     height: var(--authorPostsImgWH);
-                    border-radius: calc(var(--authorPostsImgWH) / 2);
-                    
+                    border-radius: calc(var(--authorPostsImgWH) / 2);                    
                 }
             }
             .thePost {
@@ -377,7 +370,6 @@
                 width: calc(#{var(--formBoxW)} - (2 * #{var(--formGap)}) + (2 * #{$defaultBorderSize}));
                 margin-bottom: var(--formGap);
             }
-
             .formTitle {
                 color: $defaultFontColorLight;
                 text-align: center;

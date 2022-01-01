@@ -16,5 +16,8 @@
 	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc consequat quam sem, id facilisis odio tempus eu. Curabitur ut facilisis arcu, used vehicula risus. Ut faucibus ut sapien at dictum. Ut ut elementum sem. Proin vulputate purus mauris.
 	</span>
 </footer>
+<?php        
+        wp_footer(); 
+        ?>
 </body>
 </html>
