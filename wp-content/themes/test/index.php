@@ -74,7 +74,7 @@ get_header();  ?>
             <!-- LOOP END authorsList -->
         </ul>
     </section>
-    <section  class="subscrybeForm">
+    <div  class="subscrybeForm">
         <div id="formBox" class="formBox">    
             <form class="--t05">            
                     <div class="formTitle">Lorem ipsum dolor sit amet</div>            
@@ -86,8 +86,8 @@ get_header();  ?>
             <!-- Simply click to move the screen to the form //no JS anchor -->
             <!--a href="#formBox"--><button class=" --t05">Lorem ipsum dolor sit amet</button><!--/a-->
         </div>
-    </section>
-    <section class="tagList">
+    </div>
+    <div class="tagList">
         <ul>
             <li class="icon--www"></li>
             <li class="icon--html"></li>
@@ -95,7 +95,7 @@ get_header();  ?>
             <li class="icon--css"></li>
             <li class="icon--wp"></li>
         </ul>
-    </section>
+    </div>
 </main>
 <div id="modal" class="modal --hide --t05">
     <div class="modal-holder">
