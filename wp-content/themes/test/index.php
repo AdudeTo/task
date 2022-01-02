@@ -51,7 +51,7 @@ get_header();  ?>
             <li class="--border --t05">
                 <div class="theAuthor">
                     <figure>
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/author_1.jpg">
+                        <img alt="author first" src="<?php echo get_template_directory_uri(); ?>/assets/images/author_1.jpg">
                     </figure>
                 </div>
                 <div class="thePost">
@@ -63,7 +63,7 @@ get_header();  ?>
             <li class="--border --t05">
                 <div class="theAuthor">
                     <figure>
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/author_2.jpg">
+                        <img  alt="author second" src="<?php echo get_template_directory_uri(); ?>/assets/images/author_2.jpg">
                     </figure>
                 </div>
                 <div class="thePost">
