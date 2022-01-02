@@ -6,6 +6,7 @@ if (debug && 0) {
 const formBox = document.getElementById("formBox");
 const callToform = document.getElementById("callToform");
 const subscrybeForm = document.getElementById("subscrybeForm");
+const modal = document.getElementById("modal");
 const errors = {
   invalidEmail: "Invalid Email",
   other: "Something is Wrong",
@@ -20,7 +21,7 @@ function getOffset(el) {
 }
 
 function scrollToForm() {
-  if (debug && 1) {
+  if (debug && 0) {
     console.log("find element possition");
     console.log(getOffset(formBox));
   }
@@ -113,6 +114,7 @@ if (subscrybeForm) {
   }
   subscrybeForm.addEventListener("click", function () {
     formValidate(formBox);
+    showModal();
   });
   if (debug && 0) {
     console.log("on field change");
@@ -132,5 +134,38 @@ if (subscrybeForm) {
 } else {
   if (debug && 0) {
     console.log("element subscrybeForm missing");
+  }
+}
+
+function closeModal(){
+  if (debug && 1) {
+    console.log("hide modal");
+  }
+  document.querySelector("body").classList.remove("--disableScroll");
+  modal.style.opacity = 0;
+  setTimeout(() => {modal.classList.add("--hide")}, 500);
+  
+}
+function showModal(){
+  if (debug && 1) {
+    console.log("show modal");
+  }
+  document.querySelector("body").classList.add("--disableScroll");
+  modal.classList.remove("--hide");
+  setTimeout(() => {modal.style.opacity = 1}, 10);
+
+}
+
+
+if (modal) {
+  if (debug && 1) {
+    console.log("modal exist");
+  }
+  const modalHolderMessageCloseBtn = document.getElementById("modalHolderMessageCloseBtn");
+  const modalHolderBackground = document.getElementById("modalHolderBackground");
+  modalHolderMessageCloseBtn.onclick = modalHolderBackground.onclick = closeModal;
+} else {
+  if (debug && 1) {
+    console.log("modal did not exist");
   }
 }

@@ -34,6 +34,12 @@
 .--border {
     border: solid $defaultBorderSize $defaultBorderColor;
 }
+.--hide{
+    display: none;
+}
+.--disableScroll{
+    overflow: hidden;
+}
 
 @media only screen and (max-width: $tablet) {
     :root {
@@ -452,4 +458,80 @@
         padding: 0 var(--pagePadding) var(--pagePadding) var(--pagePadding);
         display: block;
     }
+}
+
+.modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 10000;
+    opacity: 0;
+    &-holder{
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+        &-background{
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.6);
+            position: absolute;
+            top: 0;
+            left: 0;            
+        }
+        &-message{
+            --spacer: #{rem-calc(40)};
+            --closeBtnWH: #{rem-calc(60)};
+            --closeBtnSpace: #{rem-calc(5)};
+            width: calc(100vw - (var(--spacer) * 2) );
+            height: calc(100vh - (var(--spacer) * 2) );
+            background-color: white;
+            position: absolute;
+            top: var(--spacer);
+            left: var(--spacer);  
+            //padding: var(--pagePadding);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            align-content: center;    
+            &-title{
+                font-size: var(--pageTitleFS);
+                line-height: var(--pageTitleLH);
+                margin: var(--gap) ;
+                width: 100%;
+                text-align: center;
+            }  
+            &-content{
+                margin: var(--gap) ;
+                text-align: center;
+                font-size: rem-calc(20);
+                line-height: rem-calc(28);
+                
+            } 
+            &-closeBtn{
+                position: absolute;
+                top: var(--closeBtnSpace);
+                right: var(--closeBtnSpace);
+                background-color: rgba(0, 0, 0, 0.5);
+                color: white;
+                width: var(--closeBtnWH);
+                height: var(--closeBtnWH);
+                display: flex;               
+                justify-content: center;
+                align-items: center;
+                align-content: center; 
+                font-size: rem-calc(40);
+                font-weight: 900; 
+                cursor: pointer; 
+                &:hover{
+                    background-color: rgba(0, 0, 0, 1);
+                }
+
+
+            }  
+        }
+    }
+
 }

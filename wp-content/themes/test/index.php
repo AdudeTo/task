@@ -97,5 +97,23 @@ get_header();  ?>
         </ul>
     </section>
 </main>
+<div id="modal" class="modal --hide --t05">
+    <div class="modal-holder">
+        <div id="modalHolderBackground" class="modal-holder-background">
+
+        </div>
+        <div class="modal-holder-message">
+            <div id="modalHolderMessageTitle" class="modal-holder-message-title">
+            _ _ _
+            </div>
+            <p class="modal-holder-message-content">
+            Lorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit amet
+            </p>
+            <div id="modalHolderMessageCloseBtn" class="modal-holder-message-closeBtn --t05">
+                X
+            </div>
+        </div>
+    </div>
+</div>
 
 <?php get_footer(); ?>
