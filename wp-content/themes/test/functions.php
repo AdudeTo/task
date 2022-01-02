@@ -3,8 +3,10 @@
  * Functions and definitions
  */
 
-wp_enqueue_style( 'base', get_template_directory_uri() . '/assets/SCSS/main.css',false,'1.1','all');
-wp_enqueue_script( 'app', get_template_directory_uri() . '/assets/js/app.js',true,'1.1','all');
+ //use for debug  main.css,  for live main.min.css
+wp_enqueue_style( 'base', get_template_directory_uri() . '/assets/SCSS/main.min.css',false,'1.1','all');
+//use for debug and errors log app.dev.js, for test app.js, for live app.min.js
+wp_enqueue_script( 'app', get_template_directory_uri() . '/assets/js/app.min.js',true,'1.1','all');
 
 function disable_embeds_code_init() {
 
