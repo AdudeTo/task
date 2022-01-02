@@ -3,10 +3,24 @@
  * Functions and definitions
  */
 
- //use for debug  main.css,  for live main.min.css
-wp_enqueue_style( 'base', get_template_directory_uri() . '/assets/SCSS/main.min.css',false,'1.1','all');
-//use for debug and errors log app.dev.js, for test app.js, for live app.min.js
-wp_enqueue_script( 'app', get_template_directory_uri() . '/assets/js/app.min.js',true,'1.1','all');
+
+
+add_action( 'wp_enqueue_scripts', 'myplugin_enqueue' );
+
+function myplugin_enqueue() {
+    //use for debug  main.css,  for live main.min.css
+    wp_enqueue_style( 'base', get_template_directory_uri() . '/assets/SCSS/main.min.css',false,'1.1','all');
+    //use for debug and errors log app.dev.js, for test app.js, for live app.min.js
+    wp_enqueue_script( 'app', get_template_directory_uri() . '/assets/js/app.min.js',true,'1.1','all');
+}
+
+
+add_filter('style_loader_tag', 'myplugin_remove_type_attr', 10, 2);
+add_filter('script_loader_tag', 'myplugin_remove_type_attr', 10, 2);
+
+function myplugin_remove_type_attr($tag, $handle) {
+    return preg_replace( "/type=['\"]text\/(javascript|css)['\"]/", '', $tag );
+}
 
 function disable_embeds_code_init() {
 
