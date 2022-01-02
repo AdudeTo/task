@@ -8,8 +8,13 @@ const callToform = document.getElementById("callToform");
 const subscrybeForm = document.getElementById("subscrybeForm");
 const modal = document.getElementById("modal");
 const errors = {
-  invalidEmail: "Invalid Email",
-  other: "Something is Wrong",
+  invalidEmail: "Invalid Email", 
+  other: "Something is Wrong"
+};
+
+const translationKeys = {  
+  ValidEmail: "You have successfully submitted the form",
+  other: "Not in the list"
 };
 
 function getOffset(el) {
@@ -115,6 +120,24 @@ if (subscrybeForm) {
   subscrybeForm.addEventListener("click", function () {
     formValidate(formBox);
     showModal();
+
+    setTimeout(() => {
+      let selectors = "input[name='email_address']";
+      let emailField = formBox.querySelector(selectors);
+      let email_status = emailField.getAttribute("data-status");
+      let modalHolderMessageTitle = document.getElementById("modalHolderMessageTitle");
+      if(email_status === "1"){
+          modalHolderMessageTitle.innerHTML = translationKeys.ValidEmail;        
+      }else {
+        modalHolderMessageTitle.innerHTML = errors.invalidEmail;
+        modalHolderMessageTitle.classList.add("--error");
+      }
+
+    }, 50);
+
+
+
+
   });
   if (debug && 0) {
     console.log("on field change");
@@ -139,8 +162,14 @@ if (subscrybeForm) {
 
 function closeModal(){
   if (debug && 1) {
-    console.log("hide modal");
-  }
+    console.log("hide modal");  }
+
+
+  let modalHolderMessageTitle = document.getElementById("modalHolderMessageTitle");
+      modalHolderMessageTitle.innerHTML = "";
+      modalHolderMessageTitle.classList.remove("--error");
+
+
   document.querySelector("body").classList.remove("--disableScroll");
   modal.style.opacity = 0;
   setTimeout(() => {modal.classList.add("--hide")}, 500);

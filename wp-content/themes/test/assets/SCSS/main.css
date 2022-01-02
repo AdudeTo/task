@@ -171,6 +171,11 @@ button[type="submit"]:hover {
   overflow: hidden;
 }
 
+.--error {
+  color: #af0e0e;
+  text-decoration: underline;
+}
+
 @media only screen and (max-width: 48rem) {
   :root {
     --leadPostsArrowSize: 2.125rem;

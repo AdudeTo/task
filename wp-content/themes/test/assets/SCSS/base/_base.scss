@@ -40,6 +40,10 @@
 .--disableScroll{
     overflow: hidden;
 }
+.--error{
+    color: $errorColor;
+    text-decoration: underline;
+}
 
 @media only screen and (max-width: $tablet) {
     :root {
